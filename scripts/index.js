@@ -45,14 +45,11 @@ function renderCard(card) {
   currentCard
     .querySelector(".elements__like-icon")
     .addEventListener("click", (evt) => {
-      if (evt.target.getAttribute("src") === "./images/like-button.png") {
-        return evt.target.setAttribute(
-          "src",
-          "./images/like-button-clicked.png"
-        );
+      if (evt.target.getAttribute("src") === "./images/Like.png") {
+        return evt.target.setAttribute("src", "./images/like-clicked.png");
       }
 
-      return evt.target.setAttribute("src", "./images/like-button.png");
+      return evt.target.setAttribute("src", "./images/Like.png");
     });
 
   return currentCard;
