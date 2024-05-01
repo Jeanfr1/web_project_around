@@ -45,11 +45,14 @@ function renderCard(card) {
   currentCard
     .querySelector(".elements__like-icon")
     .addEventListener("click", (evt) => {
-      if (evt.target.getAttribute("src") === "./images/like.png") {
-        return evt.target.setAttribute("src", "./images/like-clicked.png");
+      if (evt.target.getAttribute("src") === "./images/like-button.png") {
+        return evt.target.setAttribute(
+          "src",
+          "./images/like-button-clicked.png"
+        );
       }
 
-      return evt.target.setAttribute("src", "./images/like.png");
+      return evt.target.setAttribute("src", "./images/like-button.png");
     });
 
   return currentCard;
@@ -62,6 +65,7 @@ initialCards.forEach((card, index) => {
   elements.append(cardItem);
 });
 
+// popupAddCardOpenAndCloseButton
 const addCardButton = document.querySelector(".profile__add-card-icon");
 const popupAddCards = document.querySelector(".popup-add-card");
 const closePopupAddCardButton = document.querySelector(
@@ -84,6 +88,7 @@ addCardButton.addEventListener("click", () => {
   });
 });
 
+// popupOpenAndCloseButton
 const editButton = document.querySelector(".profile__edit-button");
 const popup = document.querySelector(".popup");
 const closePopupButton = document.querySelector(".popup__close-button");
@@ -116,6 +121,7 @@ popupAddCards.addEventListener("click", (event) => {
   }
 });
 
+// popupViewImage
 const popupViewImage = document.querySelector(".popup-view-image");
 const closePopupViewImageButton = document.querySelector(
   ".popup-view-image__close-button"
@@ -138,7 +144,6 @@ const handleViewImageOnPopup = () => {
     const popupImage = document.querySelector(
       ".popup-view-image__render-image"
     );
-
     const poputTitle = document.querySelector(".popup-view-image__image-title");
 
     image.addEventListener("click", (e) => {
@@ -176,9 +181,12 @@ editProfileForm.addEventListener("submit", (e) => {
 });
 
 addCardForm.addEventListener("submit", (e) => {
+  handlerProfileFormSubmit(e);
+  closeEditPopup();
   e.preventDefault();
 });
 
+// validateForm
 const validationForm = (
   input1Id,
   input2Id,
@@ -273,6 +281,7 @@ const handleSaveProfileInformation = (input1, input2) => {
   });
 };
 
+// handlerCreateNewCardForm
 const title = document.querySelector(".profile__name");
 const image = document.querySelector(".profile__role");
 
