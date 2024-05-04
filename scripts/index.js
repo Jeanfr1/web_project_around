@@ -70,20 +70,25 @@ const profileRole = document.querySelector(".profile__role");
 const editButton = document.querySelector(".profile__edit-button");
 const popup = document.querySelector(".popup");
 const closePopupButton = document.querySelector(".popup__close-button");
+const editForm = document.querySelector(".popup__form");
 
 editButton.addEventListener("click", () => {
   openPopup(popup);
-  const saveButton = document.querySelector("#save-button");
+});
 
-  saveButton.addEventListener("click", () => {
-    const newName = document.querySelector("#input-name").value;
-    const newRole = document.querySelector("#input-role").value;
+editForm.addEventListener("submit", (event) => {
+  event.preventDefault();
 
+  const newName = document.querySelector("#input-name").value;
+  const newRole = document.querySelector("#input-role").value;
+
+  if (newName.trim() !== "" && newRole.trim() !== "") {
     profileName.textContent = newName;
     profileRole.textContent = newRole;
-
     closePopup(popup);
-  });
+  } else {
+    alert("Por favor, preencha todos os campos.");
+  }
 });
 
 closePopupButton.addEventListener("click", () => closePopup(popup));
