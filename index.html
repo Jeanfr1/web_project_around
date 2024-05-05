@@ -51,6 +51,13 @@
         <div class="elements">
           <template id="template">
             <div class="elements__card">
+              <button type="button" class="elements__delete-button">
+                <img
+                  class="elements__delete-icon"
+                  src="./images/Trash.svg"
+                  alt="delete button icon"
+                />
+              </button>
               <img class="elements__card-image" src="#" alt="" />
               <div class="elements__wrapper-text-and-like-button">
                 <p class="elements__card-name"></p>
@@ -106,7 +113,7 @@
             alt="Botão de fechar o popup"
           />
           <h2 class="popup__title">Novo local</h2>
-          <form class="popup__form popup__add-card-form">
+          <form class="popup__form popup__add-card-form" id="add-card-form">
             <input
               id="input-location-name"
               class="popup__input"

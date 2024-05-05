@@ -40,6 +40,14 @@ function renderCard(card) {
     .setAttribute("alt", card.name);
 
   currentCard
+    .querySelector(".elements__delete-icon")
+    .addEventListener("click", (evt) => {
+      const elements = document.querySelector(".elements");
+      const card = evt.target.closest(".elements__card");
+      elements.removeChild(card);
+    });
+
+  currentCard
     .querySelector(".elements__like-icon")
     .addEventListener("click", () => {
       const likeIcon = currentCard.querySelector(".elements__like-icon");
@@ -147,3 +155,28 @@ document
   .addEventListener("click", () => {
     closePopup(document.querySelector(".popup-view-image"));
   });
+
+// Adicionando funcionalidade para criar novos cartões
+const addCardForm = document.querySelector(".popup__add-card-form");
+
+addCardForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const inputName = document.querySelector("#input-location-name");
+  const inputImage = document.querySelector("#input-image");
+
+  const newName = inputName.value.trim();
+  const newImage = inputImage.value.trim();
+
+  if (newName !== "" && newImage !== "") {
+    const newCard = renderCard({ name: newName, link: newImage });
+    elements.prepend(newCard);
+
+    inputName.value = "";
+    inputImage.value = "";
+
+    closePopup(document.querySelector(".popup-add-card"));
+  } else {
+    alert("Por favor, preencha todos os campos.");
+  }
+});
