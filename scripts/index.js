@@ -156,7 +156,6 @@ document
     closePopup(document.querySelector(".popup-view-image"));
   });
 
-// Adicionando funcionalidade para criar novos cartões
 const addCardForm = document.querySelector(".popup__add-card-form");
 
 addCardForm.addEventListener("submit", (event) => {
