@@ -179,3 +179,65 @@ addCardForm.addEventListener("submit", (event) => {
     alert("Por favor, preencha todos os campos.");
   }
 });
+
+const validateForm = (inputId, errorId, minChars, maxChars, actionButtonId) => {
+  const input = document.querySelector(inputId);
+  const error = document.querySelector(errorId);
+  const actionButton = document.querySelector(actionButtonId);
+
+  const validateInput = () => {
+    const inputValue = input.value.trim();
+    const inputLength = inputValue.length;
+
+    if (inputLength === 0) {
+      error.textContent = "Preencha esse campo.";
+      actionButton.disabled = true;
+    } else if (inputLength < minChars || inputLength > maxChars) {
+      error.textContent = `O campo deve ter entre ${minChars} e ${maxChars} caracteres.`;
+      actionButton.disabled = true;
+    } else {
+      error.textContent = "";
+      actionButton.disabled = false;
+    }
+  };
+
+  input.addEventListener("input", validateInput);
+  validateInput();
+};
+
+validateForm("#input-name", "#input-name-error", 2, 40, "#save-button");
+validateForm("#input-role", "#input-role-error", 2, 200, "#save-button");
+validateForm(
+  "#input-location-name",
+  "#input-location-name-error",
+  2,
+  30,
+  "#create-button"
+);
+
+const validateUrl = (inputId, errorId, actionButtonId) => {
+  const input = document.querySelector(inputId);
+  const error = document.querySelector(errorId);
+  const actionButton = document.querySelector(actionButtonId);
+
+  const validateInput = () => {
+    const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
+    const inputValue = input.value.trim();
+
+    if (inputValue === "") {
+      error.textContent = "Preencha esse campo.";
+      actionButton.disabled = true;
+    } else if (!urlPattern.test(inputValue)) {
+      error.textContent = "Insira uma URL válida.";
+      actionButton.disabled = true;
+    } else {
+      error.textContent = "";
+      actionButton.disabled = false;
+    }
+  };
+
+  input.addEventListener("input", validateInput);
+  validateInput();
+};
+
+validateUrl("#input-image", "#input-image-error", "#create-button");
