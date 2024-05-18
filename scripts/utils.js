@@ -1,22 +1,19 @@
-export function openPopup(popupElement) {
-  popupElement.classList.add("popup_opened");
+const popup = document.querySelector(".popup");
+
+export function changeVisibility() {
+  popup.classList.toggle("popup_opened");
+  updateEventListener();
 }
 
-export function closePopup(popupElement) {
-  popupElement.classList.remove("popup_opened");
+export function hideVisibility() {
+  popup.classList.remove("popup_opened");
+  updateEventListener();
 }
 
-document.addEventListener("click", (event) => {
-  if (event.target.classList.contains("popup_opened")) {
-    closePopup(event.target);
-  }
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    const openPopup = document.querySelector(".popup_opened");
-    if (openPopup) {
-      closePopup(openPopup);
-    }
-  }
-});
+function updateEventListener() {
+  const isOpen = popup.classList.contains("popup_opened");
+  const eventListenerAction = isOpen
+    ? "addEventListener"
+    : "removeEventListener";
+  document[eventListenerAction]("keydown", closePopupKeyEscape);
+}
