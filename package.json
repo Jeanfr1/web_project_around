@@ -4,15 +4,21 @@
   "description": "Bem-vindo ao projeto \"EUA Afora\"! Neste emocionante empreendimento, estamos desenvolvendo uma página web interativa onde os usuários podem adicionar, remover e curtir fotos. Nosso objetivo é criar uma experiência envolvente e dinâmica para os visitantes, permitindo-lhes compartilhar suas aventuras e descobertas pelos Estados Unidos.",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && webpack --mode production",
-    "dev": "webpack serve --mode development"
+    "build": "webpack --mode production",
+    "dev": "webpack serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/preset-env": "^7.24.5",
+    "babel-loader": "^9.1.3",
+    "html-webpack-plugin": "^5.6.0",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
+  },
+  "dependencies": {
+    "core-js": "^3.37.1"
   }
 }
