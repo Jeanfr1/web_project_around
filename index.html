@@ -8,7 +8,7 @@
       name="description"
       content="Informacoes sobre as paisagens exploradas por Jacques Cousteau"
     />
-    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Around - Project</title>
   </head>
   <body>
@@ -25,7 +25,7 @@
           <img
             class="profile__image"
             src="./images/Jacques-Cousteau.jpg"
-            alt="Imagem de homem idoso com gorro vermelho e camisa de botão"
+            alt="Imagem de Jacques Cousteau"
           />
           <div class="profile__wrapper-texts">
             <div class="profile__wrapper-name-and-edit-button">
@@ -34,7 +34,7 @@
                 <img
                   class="profile__edit-icon"
                   src="./images/Edit-Button.png"
-                  alt="Icone de edição"
+                  alt="Ícone de edição"
                 />
               </button>
             </div>
@@ -44,28 +44,32 @@
             <img
               class="profile__add-card-icon"
               src="./images/Add-Button.svg"
-              alt="Add card button"
+              alt="Ícone de adição de cartão"
             />
           </button>
         </section>
         <div class="elements">
-          <template id="template">
+          <template class="template-card">
             <div class="elements__card">
               <button type="button" class="elements__delete-button">
                 <img
                   class="elements__delete-icon"
                   src="./images/Trash.svg"
-                  alt="delete button icon"
+                  alt="Ícone de exclusão"
                 />
               </button>
-              <img class="elements__card-image" src="#" alt="" />
+              <img
+                class="elements__card-image"
+                src="#"
+                alt="Imagem do cartão"
+              />
               <div class="elements__wrapper-text-and-like-button">
                 <p class="elements__card-name"></p>
                 <button type="button" class="elements__like-button">
                   <img
                     class="elements__like-icon"
                     src="./images/Like.png"
-                    alt="like button icon"
+                    alt="Ícone de curtida"
                   />
                 </button>
               </div>
@@ -76,85 +80,14 @@
       <footer class="footer">
         <p class="footer__copyright">© 2024 Around The U.S.</p>
       </footer>
-      <div class="popup">
-        <div class="popup__container">
-          <img
-            class="popup__close-button"
-            src="./images/Close-Icon.png"
-            alt="Botão de fechar o popup"
-          />
-          <h2 class="popup__title">Editar perfil</h2>
-          <form class="popup__form">
-            <input
-              id="input-name"
-              class="popup__input"
-              type="text"
-              placeholder="Nome"
-            />
-            <span id="input-name-error" class="popup__form-error"></span>
-            <input
-              id="input-role"
-              class="popup__input"
-              type="text"
-              placeholder="sobre-mim"
-            />
-            <span id="input-role-error" class="popup__form-error"></span>
-            <button id="save-button" class="popup__save-button" type="submit">
-              Salvar
-            </button>
-          </form>
-        </div>
-      </div>
-      <div class="popup popup-add-card">
-        <div class="popup__container">
-          <img
-            class="popup__close-button popup-add-card__close-button"
-            src="./images/Close-Icon.png"
-            alt="Botão de fechar o popup"
-          />
-          <h2 class="popup__title">Novo local</h2>
-          <form class="popup__form popup__add-card-form" id="add-card-form">
-            <input
-              id="input-location-name"
-              class="popup__input"
-              type="text"
-              placeholder="Titulo"
-            />
-            <span
-              id="input-location-name-error"
-              class="popup__form-error"
-            ></span>
-            <input
-              id="input-image"
-              class="popup__input"
-              type="text"
-              placeholder="Link da imagem"
-            />
-            <span id="input-image-error" class="popup__form-error"></span>
-            <button
-              id="create-button"
-              class="popup__save-button popup-add-card__create-button"
-              type="submit"
-            >
-              Criar
-            </button>
-          </form>
-        </div>
-      </div>
-      <div class="popup popup-view-image">
-        <div class="popup__container popup-view-image__image-container">
-          <img
-            class="popup__close-button popup-view-image__close-button"
-            src="./images/Close-Icon.png"
-            alt="Botão de fechar o popup"
-          />
-          <div class="popup-view-image__image-container">
-            <img class="popup-view-image__render-image" src="#" alt="" />
-            <span class="popup-view-image__image-title"></span>
-          </div>
-        </div>
-      </div>
     </div>
-    <script type="module" src="./scripts/index.js"></script>
+
+    <!-- Popups -->
+    <div class="popup popup-edit-profile">...</div>
+    <div class="popup popup-add-card">...</div>
+    <div class="popup popup-view-image">...</div>
+
+    <!-- Scripts -->
+    <script src="./bundle.js"></script>
   </body>
 </html>

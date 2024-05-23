@@ -1,0 +1,18 @@
+{
+  "name": "web_project_around",
+  "version": "1.0.0",
+  "description": "Bem-vindo ao projeto \"EUA Afora\"! Neste emocionante empreendimento, estamos desenvolvendo uma página web interativa onde os usuários podem adicionar, remover e curtir fotos. Nosso objetivo é criar uma experiência envolvente e dinâmica para os visitantes, permitindo-lhes compartilhar suas aventuras e descobertas pelos Estados Unidos.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}
