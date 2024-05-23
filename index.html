@@ -1,91 +1,89 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Josean Araujo" />
-    <meta
-      name="description"
-      content="Informacoes sobre as paisagens exploradas por Jacques Cousteau"
-    />
-    <link rel="stylesheet" href="./styles.css" />
-    <title>Around - Project</title>
+    <title>Web Project</title>
+    <link rel="stylesheet" href="styles/index.css" />
   </head>
   <body>
-    <div class="page">
-      <header class="header">
-        <img
-          class="header__logo"
-          src="./images/Vector.svg"
-          alt="Logo Around the U.S"
-        />
-      </header>
-      <main>
-        <section class="profile">
-          <img
-            class="profile__image"
-            src="./images/Jacques-Cousteau.jpg"
-            alt="Imagem de Jacques Cousteau"
+    <section class="profile">
+      <div class="profile__info">
+        <h1 class="profile__name">Jacques Cousteau</h1>
+        <p class="profile__role">Explorer</p>
+        <button class="profile__edit-button">Edit Profile</button>
+      </div>
+      <button class="profile__add-button">Add Card</button>
+    </section>
+
+    <section class="elements">
+      <ul class="elements__list"></ul>
+    </section>
+
+    <div class="popup popup-profile">
+      <div class="popup__content">
+        <button class="popup__close-button"></button>
+        <form class="popup__form" name="profile-form">
+          <h2 class="popup__title">Edit Profile</h2>
+          <input
+            type="text"
+            name="name"
+            class="popup__input popup__input_type_name"
+            placeholder="Name"
+            required
           />
-          <div class="profile__wrapper-texts">
-            <div class="profile__wrapper-name-and-edit-button">
-              <h1 class="profile__name">Jacques Cousteau</h1>
-              <button class="profile__edit-button">
-                <img
-                  class="profile__edit-icon"
-                  src="./images/Edit-Button.png"
-                  alt="Ícone de edição"
-                />
-              </button>
-            </div>
-            <p class="profile__role">Explorador</p>
-          </div>
-          <button class="profile__add-card-button">
-            <img
-              class="profile__add-card-icon"
-              src="./images/Add-Button.svg"
-              alt="Ícone de adição de cartão"
-            />
-          </button>
-        </section>
-        <div class="elements">
-          <template class="template-card">
-            <div class="elements__card">
-              <button type="button" class="elements__delete-button">
-                <img
-                  class="elements__delete-icon"
-                  src="./images/Trash.svg"
-                  alt="Ícone de exclusão"
-                />
-              </button>
-              <img
-                class="elements__card-image"
-                src="#"
-                alt="Imagem do cartão"
-              />
-              <div class="elements__wrapper-text-and-like-button">
-                <p class="elements__card-name"></p>
-                <button type="button" class="elements__like-button">
-                  <img
-                    class="elements__like-icon"
-                    src="./images/Like.png"
-                    alt="Ícone de curtida"
-                  />
-                </button>
-              </div>
-            </div>
-          </template>
-        </div>
-      </main>
-      <footer class="footer">
-        <p class="footer__copyright">© 2024 Around The U.S.</p>
-      </footer>
+          <input
+            type="text"
+            name="role"
+            class="popup__input popup__input_type_role"
+            placeholder="Role"
+            required
+          />
+          <button type="submit" class="popup__save-button">Save</button>
+        </form>
+      </div>
     </div>
 
-    <div class="popup popup-edit-profile">...</div>
-    <div class="popup popup-add-card">...</div>
-    <div class="popup popup-view-image">...</div>
+    <div class="popup popup-add-card">
+      <div class="popup__content">
+        <button class="popup__close-button"></button>
+        <form class="popup__form" name="add-card-form">
+          <h2 class="popup__title">New Place</h2>
+          <input
+            type="text"
+            name="name"
+            class="popup__input popup__input_type_name"
+            placeholder="Title"
+            required
+          />
+          <input
+            type="url"
+            name="link"
+            class="popup__input popup__input_type_link"
+            placeholder="Image Link"
+            required
+          />
+          <button type="submit" class="popup__save-button">Create</button>
+        </form>
+      </div>
+    </div>
 
-    <script src="./bundle.js"></script>
+    <div class="popup popup-view-image">
+      <div class="popup__content popup-view-image__content">
+        <button class="popup__close-button"></button>
+        <img class="popup-view-image__render-image" src="#" alt="Image" />
+        <h2 class="popup-view-image__image-title"></h2>
+      </div>
+    </div>
+
+    <template id="card-template">
+      <li class="elements__card">
+        <img class="elements__card-image" src="#" alt="Image" />
+        <h2 class="elements__card-name"></h2>
+      </li>
+    </template>
+
+    <script src="main.js"></script>
   </body>
 </html>
