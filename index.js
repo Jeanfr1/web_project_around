@@ -1,8 +1,10 @@
-import { Section } from "./section.js";
+import { Card } from "./card.js";
+import { Section } from "./Section.js";
+import { Popup } from "./Popup.js";
 import { PopupWithImage } from "./PopupWithImage.js";
 import { PopupWithForm } from "./PopupWithForm.js";
 import { UserInfo } from "./UserInfo.js";
-import { Card } from "./card.js";
+import "./styles/index.css";
 
 const userInfo = new UserInfo(".profile__name", ".profile__role");
 const popupEditProfile = new PopupWithForm(
