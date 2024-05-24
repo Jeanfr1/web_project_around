@@ -1,17 +1,26 @@
 .footer {
-  margin: 67px auto 0;
-  max-width: 880px;
+  width: 880px;
+  color: #545454;
+  margin: 67px auto 60px;
 }
 
-.footer__copyright {
-  margin: 0;
-  font-size: 18px;
-  line-height: 21.78px;
-  color: #545454;
+@media screen and (max-width: 1024px) {
+  .footer {
+    width: 780px;
+    margin: 67px auto 60px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .footer {
+    width: 680px;
+    margin: 67px auto 60px;
+  }
 }
 
 @media screen and (max-width: 720px) {
   .footer {
-    padding: 0 19px 36px;
+    width: 282px;
+    margin: 67px auto 36px;
   }
 }
