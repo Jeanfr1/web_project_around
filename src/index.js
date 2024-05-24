@@ -8,13 +8,13 @@ import {
   jobInput,
   cardButton,
   formCard,
-} from "./script/utils.js";
-import FormValidator from "./script/FormValidator.js";
-import Card from "./script/card.js";
-import { Section } from "./script/section.js";
-import { PopupWithImage } from "./script/PopupWithImage.js";
-import { PopupWithForm } from "./script/PopupWithForm.js";
-import { UserInfo } from "./script/UserInfo.js";
+} from "./scripts/utils.js";
+import FormValidator from "./scripts/FormValidator.js";
+import Card from "./scripts/card.js";
+import { Section } from "./scripts/section.js";
+import { PopupWithImage } from "./scripts/PopupWithImage.js";
+import { PopupWithForm } from "./scripts/PopupWithForm.js";
+import { UserInfo } from "./scripts/UserInfo.js";
 
 // Validação de formulários
 const configUserValidate = {
