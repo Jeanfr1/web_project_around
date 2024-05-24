@@ -5,7 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap");
 
 /* Blocks CSS */
-@import url("../blocks/page.css");
+@import url("../blocks/pages.css");
 @import url("../blocks/header.css");
 @import url("../blocks/profile.css");
 @import url("../blocks/footer.css");
