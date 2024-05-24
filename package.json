@@ -4,7 +4,8 @@
   "description": "Bem-vindo ao projeto \"EUA Afora\"! Neste emocionante empreendimento, estamos desenvolvendo uma página web interativa onde os usuários podem adicionar, remover e curtir fotos. Nosso objetivo é criar uma experiência envolvente e dinâmica para os visitantes, permitindo-lhes compartilhar suas aventuras e descobertas pelos Estados Unidos.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production",
+    "dev": "webpack server"
   },
   "keywords": [],
   "author": "",
