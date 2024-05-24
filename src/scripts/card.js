@@ -1,5 +1,5 @@
-import likedImage from "../image/like-clicked.png";
-import heartImage from "../image/Like.png";
+import likedImage from "../images/like-clicked.png";
+import heartImage from "../images/Like.png";
 
 export default class Card {
   constructor(data, dataTemplate, handleImagePopup) {
