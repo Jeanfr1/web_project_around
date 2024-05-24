@@ -1,0 +1,15 @@
+/* Vendor CSS */
+@import url("../vendor/normalize.css");
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap");
+
+/* Blocks CSS */
+@import url("../blocks/page.css");
+@import url("../blocks/header.css");
+@import url("../blocks/profile.css");
+@import url("../blocks/footer.css");
+@import url("../blocks/popup.css");
+@import url("../blocks/popupcardadd.css");
+@import url("../blocks/elements.css");
+@import url("../blocks/zoom.css");
