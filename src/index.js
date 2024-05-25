@@ -1,4 +1,3 @@
-// Importações
 import "./styles/index.css";
 import {
   initialCards,
@@ -16,7 +15,6 @@ import { PopupWithImage } from "./scripts/PopupWithImage.js";
 import { PopupWithForm } from "./scripts/PopupWithForm.js";
 import { UserInfo } from "./scripts/UserInfo.js";
 
-// Validação de formulários
 const configUserValidate = {
   inputSelectorOne: ".form__input-name",
   inputSelectorTwo: ".form__input-job",
@@ -35,7 +33,6 @@ const configFormValidade = {
 new FormValidator(configUserValidate, formElement).enableValidation();
 new FormValidator(configFormValidade, formCard).enableValidation();
 
-// Instância de usuário
 const infoUser = new UserInfo(".profile__info-name", ".profile__info-text");
 const popupInfoUser = new PopupWithForm(
   "#popup-user",
@@ -60,7 +57,6 @@ const popupImg = new PopupWithImage(
   ".popup_image"
 );
 
-// Gerador de cards
 const section = new Section(
   {
     items: initialCards,
@@ -80,7 +76,6 @@ const section = new Section(
 );
 section.renderItems();
 
-// Instância para adicionar novos Cards
 const formCardAdd = new PopupWithForm(
   ".popup_add",
   (item) => {
