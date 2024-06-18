@@ -1,26 +1,24 @@
 .footer {
-  width: 880px;
+  max-width: 880px;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 60px 0;
   color: #545454;
-  margin: 67px auto 60px;
 }
 
-@media screen and (max-width: 1024px) {
+.footer__paragraph {
+  margin: 0;
+}
+
+@media only screen and (max-width: 1000px) {
   .footer {
-    width: 780px;
-    margin: 67px auto 60px;
+    width: 75%;
   }
 }
 
-@media screen and (max-width: 900px) {
+@media only screen and (max-width: 683px) {
   .footer {
-    width: 680px;
-    margin: 67px auto 60px;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  .footer {
-    width: 282px;
-    margin: 67px auto 36px;
+    padding: 0 0 36px 0;
+    width: 85%;
   }
 }
