@@ -36,9 +36,8 @@ export default class Card {
   generateCard() {
     this._element = this._getTemplate();
     this._setEventListeners();
-    this.likeClick();
     this._element.querySelector(".elements__image").src = this._link;
-    this._element.querySelector(".elements__title").alt = this._name;
+    this._element.querySelector(".elements__image").alt = this._name;
     this._element.querySelector(".elements__title").textContent = this._name;
     this._element.querySelector(".elements__like-count").textContent =
       this._likes.length;
@@ -63,39 +62,27 @@ export default class Card {
 
   isLiked() {
     const myId = "21f49d39-7f3b-46b9-92e4-04f6de3be567";
-
-    return this._likes.find((res) => res._id === myId);
+    return this._likes.some((like) => like._id === myId);
   }
 
   likeClick() {
     const likeButton = this._element.querySelector(".elements__like-button");
     const likeCount = this._element.querySelector(".elements__like-count");
 
-    const liked = () => {
-      if (!this.isLiked()) {
-        this._handleAddLike(this._cardId).then((res) => {
-          likeButton.classList.add("active");
-
-          const active = this._element.querySelector(".active");
-
-          localStorage.setItem(active, likeButton);
-
-          likeCount.textContent = parseInt(++this._likes.length);
-
-          this._likes = res.likes;
+    likeButton.addEventListener("click", (e) => {
+      if (e.target.classList.contains("active")) {
+        e.target.classList.remove("active");
+        this._handleRemoveLike(this._cardId).then((data) => {
+          this._likes = data.likes;
+          likeCount.textContent = this._likes.length;
         });
       } else {
-        this._handleRemoveLike(this._cardId).then((res) => {
-          likeButton.classList.remove("active");
-          this._likes = res.likes;
+        e.target.classList.add("active");
+        this._handleAddLike(this._cardId).then((data) => {
+          this._likes = data.likes;
           likeCount.textContent = this._likes.length;
         });
       }
-    };
-
-    likeButton.addEventListener("click", liked, () => {
-      const active = likeButton.classList.add("active");
-      sessionStorage.getItem(active);
     });
   }
 
@@ -108,6 +95,7 @@ export default class Card {
 
   _setEventListeners() {
     this._trash();
+    this.likeClick();
     this._element
       .querySelector(".elements__image")
       .addEventListener("click", () => {
